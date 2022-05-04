@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated: {}
+  source:
+    kustomize:
+      images:
+        - nginx:1.20.2
