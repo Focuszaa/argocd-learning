@@ -9,4 +9,4 @@ spec:
   source:
     kustomize:
       images:
-        - nginx:1.20.2
+        - nginx:1.21
