@@ -3,16 +3,17 @@ kind: Kustomization
 
 resources:
 - ../../base
-- deployment.yaml
+# - deployment.yaml
 
 namespace: canary
 
 commonLabels:
   app.kubernetes.io/component: nginx
+  app.kubernetes.io/part-of: myapps
 
 images:
 - name: nginx
-  newTag: "nginx:1.21"
+  newTag: "1.21"
 
 patches:
 - patch: |-
