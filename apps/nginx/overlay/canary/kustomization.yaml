@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+- deployment.yaml
+
+namespace: canary
+
+commonLabels:
+  app.kubernetes.io/component: nginx
+
+images:
+- name: nginx
+  newTag: "nginx:1.20.2"
+
+patches:
+- patch: |-
+    - op: add
+      path: /metadata/annotations/reloader.stakater.com~1auto
+      value: "true"
+  target:
+    kind: Deployment
+    labelSelector: app.kubernetes.io/name=caduceus
+    name: nginx
