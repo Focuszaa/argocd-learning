@@ -12,7 +12,7 @@ commonLabels:
 
 images:
 - name: nginx
-  newTag: "nginx:1.20.2"
+  newTag: "nginx:1.21"
 
 patches:
 - patch: |-
