@@ -21,5 +21,5 @@ patches:
       value: "true"
   target:
     kind: Deployment
-    labelSelector: app.kubernetes.io/name=caduceus
+    labelSelector: app.kubernetes.io/name=ngnix
     name: nginx
