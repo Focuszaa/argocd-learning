@@ -9,6 +9,7 @@ namespace: staging
 
 commonLabels:
   app.kubernetes.io/component: nginx
+  app.kubernetes.io/part-of: myapps
 
 images:
 - name: nginx
